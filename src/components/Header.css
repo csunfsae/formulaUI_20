@@ -1,0 +1,10 @@
+.navbar {
+    background-color:  rgb(208, 13, 45);
+}
+
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {float:none;}

@@ -1,11 +1,10 @@
 import React, { Component } from 'react'; 
 import ReactMapGL, { GeolocateControl, Marker } from 'react-map-gl';
 
-import './GeoLocation.css';
+import './Geolocation.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 import io from 'socket.io-client';
-
 
 const geolocateStyle = {
     position: 'absolute',
@@ -14,7 +13,7 @@ const geolocateStyle = {
     padding: '0px'
 };
 
-class GeoLocation extends Component {
+class Geolocation extends Component {
     constructor(props) {
         super(props);
         // this.carSocket = io('https://car.matadormotorsports.racing'); // connect to socket.io 
@@ -29,9 +28,9 @@ class GeoLocation extends Component {
                 height: 500,
                 latitude: 34.2418,
                 longitude: -118.5289,
-                zoom: 18
-                // bearing: 0, // rotation 
-                // pitch: 50 // horizon measured in degrees 
+                zoom: 17,
+                bearing: 0, // rotation 
+                pitch: 50 // horizon measured in degrees 
             }
         };
         // this.subscribeToLocation(); // use socket to find vehicle position (long , lat) 
@@ -46,16 +45,21 @@ class GeoLocation extends Component {
 
     render() {
         return (
-            <div className="geolocate"> 
+            <div className="geolocate-container">
                 <ReactMapGL
                     {...this.state.viewport}
                     onViewportChange={viewport => this.setState({ viewport })} // allows interaction with map (moving)
-                    mapStyle='mapbox://styles/mapbox/streets-v10' // style map 
+                    mapStyle='mapbox://styles/mapbox/streets-v10' // style map streets/v?
                     width='100%'
                     mapboxApiAccessToken='pk.eyJ1IjoiY3N1bmZvcm11bGFzYWUiLCJhIjoiY2syY3d4MGpoMmM4ODNncWhldnUxZXE5OSJ9.EbJxOteIyBQBGTfNp5m5OA' // api key 
                     mapOptions={{
                         logoPosition: 'bottom-right'
                     }}
+
+                    dragPan = { false }
+                    doubleClickZoom = {false}
+                    scrollZoom = { false }
+
                 >   
                     <Marker
                         latitude={this.state.carLat}
@@ -64,8 +68,7 @@ class GeoLocation extends Component {
                     >
                         <span role='img'>️🏎</span>
                     </Marker>
-                    
-                    
+
                     <GeolocateControl 
                         style = {geolocateStyle}
                         onViewportChange={viewport => this.setState({viewport})}
@@ -80,4 +83,4 @@ class GeoLocation extends Component {
         )
     }
 }
-export default GeoLocation;  
+export default Geolocation;  

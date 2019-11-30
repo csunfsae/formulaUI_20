@@ -1,14 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-import CompanionApp from './CompanionApp';
-import Speedometer from './components/Speedometer'
+// Components Import
+import Header from './components/Header';
+import CompanionApp from './containers/CompanionApp';
+
+import { Container, Col, Row} from 'react-bootstrap';
+
+// function App() {
+//   return (
+//     <Container> 
+//       <Row>
+//         <Header/>
+//         <CompanionApp />
+//       </Row>
+//     </Container>
+//   );
+// }
+
+// export default App;
+
 
 function App() {
   return (
-    <CompanionApp/>    
-    // <Speedometer /> 
+    <div className="App"> 
+       <Header/>
+       <CompanionApp/>    
+    </div>
+    // <React.Fragment>
+     
+    // </React.Fragment>
   );
 }
 
