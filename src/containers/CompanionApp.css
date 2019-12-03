@@ -19,7 +19,8 @@
 }
 
 .geolocate-container {
-    border: 1px solid rgb(208, 13, 45);
+    /* border: 1px solid rgb(208, 13, 45); */
+    border: 1px solid black;
 }
 
 .second-row {

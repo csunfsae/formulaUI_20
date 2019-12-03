@@ -9,7 +9,7 @@ class Header extends Component {
             <Navbar variant="dark"> 
                 <div className="navbar-header">
                 <Navbar.Brand className="navbar-brand">
-                    <h3> Matator Motorsports</h3>
+                    <h3>MataMotive</h3>
                 </Navbar.Brand>
                 </div>
             </Navbar>

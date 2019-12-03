@@ -1,5 +1,12 @@
-
-
 .bottom-row {
     padding-top: 60px;
 }
+.weather {
+    text-align: center;
+}
+.drive-title { 
+    color: rgb(208, 13, 45);
+}
+/* .current-temperature {
+    color: green;
+} */

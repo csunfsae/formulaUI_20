@@ -23,14 +23,6 @@ class CompanionApp extends Component {
                         <Col md={6}> <Geolocation/></Col>
                         <Col md={6}> <Cards /> </Col>
                     </Row>
-                    {/* <Row className="first-row">  
-                        <Col md={4}><Speedometer/></Col>
-                        <Col md={{ span: 4, offset: 4 }} className="battery"><Battery /></Col>
-                        
-                    </Row>
-                    <Row className="second-row">
-                        <Col md={{ span: 6, offset: 3 }}><GeoLocation/></Col>
-                    </Row> */}
                 </Container>
             </React.Fragment>
             
